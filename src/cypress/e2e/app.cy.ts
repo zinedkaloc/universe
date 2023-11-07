@@ -22,6 +22,16 @@ describe('App', () => {
       // confirm div with id of hours has today's day
       cy.get('#hours').contains(today)
     })
+    it('should display todays day', () => {
+  // start from the index page
+  cy.visit('http://localhost:3000/')
+
+  // get today's long day name
+  const today = new Date().toLocaleDateString('en-US', { weekday: 'long' })
+
+  // confirm div with id of hours has today's day
+  cy.get('#hours').contains(today)
+})
   })
   
   // Prevent TypeScript from reading file as legacy script

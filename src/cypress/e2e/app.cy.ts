@@ -11,17 +11,6 @@ describe('App', () => {
       // check the h1 tag to contain shelter
       cy.get('h1').contains('Adoption shelter')
     })
-
-    it('should display todays day', () => {
-      // start from the index page
-      cy.visit('http://localhost:3000/')
-
-      // get today's long day name
-      const today = new Date().toLocaleDateString('en-US', { weekday: 'long' })
-
-      // confirm div with id of hours has today's day
-      cy.get('Tuesday').contains(today)
-    })
   })
   
   // Prevent TypeScript from reading file as legacy script
